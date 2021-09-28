@@ -3,6 +3,8 @@
  */
 package lab02;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Library {
@@ -10,7 +12,7 @@ public class Library {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int[] values = new int[]{2, 5, 3, 4, 6, 1, 10};
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
@@ -37,6 +39,9 @@ public class Library {
         System.out.println(calculateAvg(values));
         System.out.println(Arrays.toString(arrayOfArrays(weeklyMonthTemperatures)));
         tempMethod(weeklyMonthTemperatures);
+        Linter linter = new Linter();
+        Path path = Paths.get("C:\\Users\\jamal\\Downloads\\gates.js");
+//        System.out.println(linter.linterMethod(path.toString()));
     }
 
     public static int[] roll(int n) {

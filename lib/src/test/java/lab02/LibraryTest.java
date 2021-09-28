@@ -4,6 +4,11 @@
 package lab02;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -40,6 +45,21 @@ class LibraryTest {
         };
         int [] requiredResult = {55, 54, 60, 53, 59, 57, 61};
         assertArrayEquals(requiredResult,library.arrayOfArrays(weeklyMonthTemperatures),"The result must be the third row {55, 54, 60, 53, 59, 57, 61}");
+    }
+
+    @Test void tallyTest(){
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        assertEquals("Bush",Library.tally(votes),"tally should return the name of the candidate  that has the max. votes which is Bush.");
     }
 
 }
